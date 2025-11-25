@@ -2,24 +2,28 @@ import React, { useState } from 'react';
 import GlobeComponent from './components/Globe';
 import EventForm from './components/EventForm';
 import Sidebar from './components/Sidebar';
+import Header from './components/Header';
 import { eventsData } from './data/events';
 import './components/Sidebar.css';
+import './components/Header.css';
 
 function App() {
   const [events, setEvents] = useState(eventsData);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const addEvent = (event) => {
     setEvents([...events, event]);
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <>
-      <div style={{ position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%)', zIndex: 1, color: 'white', textAlign: 'center' }}>
-        <img src="/vite.svg" alt="logo" style={{ width: 50, height: 50 }} />
-        <h1>Community Events Globe</h1>
-      </div>
+      <Header onToggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
       <GlobeComponent pointsData={events} />
-      <Sidebar>
+      <Sidebar isOpen={isSidebarOpen}>
         <EventForm onAddEvent={addEvent} />
       </Sidebar>
     </>

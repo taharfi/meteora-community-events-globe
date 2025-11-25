@@ -4,10 +4,11 @@
   left: -300px;
   width: 300px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
   transition: left 0.3s ease-in-out;
   z-index: 100;
+  border-right: 1px solid #333;
 }
 
 .sidebar.open {
@@ -15,16 +16,18 @@
 }
 
 .sidebar-toggle {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 101;
-  background-color: #646cff;
-  color: white;
-  border: none;
+  background-color: transparent;
+  color: #f0f0f0;
+  border: 1px solid #f0f0f0;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sidebar-toggle:hover {
+  background-color: #f0f0f0;
+  color: #1a1a1a;
 }
 
 .sidebar-content {
