@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import GlobeComponent from './components/Globe';
 import EventForm from './components/EventForm';
+import Sidebar from './components/Sidebar';
+import { eventsData } from './data/events';
+import './components/Sidebar.css';
 
 function App() {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(eventsData);
 
   const addEvent = (event) => {
     setEvents([...events, event]);
@@ -16,7 +19,9 @@ function App() {
         <h1>Community Events Globe</h1>
       </div>
       <GlobeComponent pointsData={events} />
-      <EventForm onAddEvent={addEvent} />
+      <Sidebar>
+        <EventForm onAddEvent={addEvent} />
+      </Sidebar>
     </>
   )
 }

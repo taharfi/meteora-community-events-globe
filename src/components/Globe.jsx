@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Globe from 'react-globe.gl';
+import * as THREE from 'three';
 
 const GlobeComponent = ({ pointsData }) => {
   const globeEl = useRef();
@@ -8,6 +9,11 @@ const GlobeComponent = ({ pointsData }) => {
     // Auto-rotate
     globeEl.current.controls().autoRotate = true;
     globeEl.current.controls().autoRotateSpeed = 0.2;
+
+    // Add a sun
+    const sun = new THREE.DirectionalLight(0xffffff, 0.6);
+    sun.position.set(-2, 0.5, 1.5);
+    globeEl.current.scene().add(sun);
   }, []);
 
   return (
@@ -25,6 +31,7 @@ const GlobeComponent = ({ pointsData }) => {
         <div>LNG: ${d.lng}</div>
       `}
       atmosphereColor="lightskyblue"
+      onPointHover={point => globeEl.current.pointColor(point ? 'rgba(255, 255, 0, 0.5)' : 'color')}
     />
   );
 };

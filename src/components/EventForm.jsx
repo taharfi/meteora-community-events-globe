@@ -21,7 +21,7 @@ const EventForm = ({ onAddEvent }) => {
   };
 
   return (
-    <div style={{ position: 'absolute', top: 20, left: 20, zIndex: 1, backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: 10, borderRadius: 5 }}>
+    <div>
       <h3>Add New Event</h3>
       <form onSubmit={handleSubmit}>
         <input
