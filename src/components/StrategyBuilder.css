@@ -1,4 +1,4 @@
-.simulator {
+.strategy-builder {
   background-color: #2a2a2a;
   padding: 20px;
   border-radius: 10px;
@@ -6,11 +6,21 @@
   margin-top: 20px;
 }
 
-.simulator-controls {
+.strategy-form {
+  display: flex;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
-.simulator-controls button {
+.strategy-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.strategy-form button {
   background-color: #646cff;
   color: white;
   border: none;
@@ -20,10 +30,10 @@
   transition: background-color 0.3s;
 }
 
-.simulator-controls button:hover {
+.strategy-form button:hover {
   background-color: #535bf2;
 }
 
-.simulator-results h3 {
+.backtest-results h3 {
   margin-top: 0;
 }

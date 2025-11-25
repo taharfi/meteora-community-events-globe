@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import GlobeComponent from './components/Globe';
-import EventForm from './components/EventForm';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
-import Simulator from './components/Simulator';
+import StrategyBuilder from './components/StrategyBuilder';
 import { eventsData } from './data/events';
 import './components/Sidebar.css';
 import './components/Header.css';
-import './components/Simulator.css';
+import './components/StrategyBuilder.css';
 
 function App() {
   const [events, setEvents] = useState(eventsData);
@@ -26,8 +25,7 @@ function App() {
       <Header onToggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
       <GlobeComponent pointsData={events} />
       <Sidebar isOpen={isSidebarOpen}>
-        <EventForm onAddEvent={addEvent} />
-        <Simulator />
+        <StrategyBuilder />
       </Sidebar>
     </>
   )
