@@ -18,3 +18,4 @@ To run the project locally, follow these steps:
 2. Install the dependencies with `npm install`.
 3. Start the development server with `npm run dev`.
 tzst
+lk
